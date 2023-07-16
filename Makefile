@@ -45,7 +45,7 @@ debug: ## Print variables
 clean: ## Clean
 	stack clean
 	rm -f *.hi *.o *.cabal *.png *.svg *.html
-	rm -f $(DOCUMENTATION_DIR)
+	rm -rf $(DOCUMENTATION_DIR)
 	find src test \
 		-iname '*.o' \
 		-o -iname '*.hi' \
