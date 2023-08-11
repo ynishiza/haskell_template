@@ -1,8 +1,8 @@
-{-# LANGUAGE OverloadedStrings #-} 
+{-# LANGUAGE OverloadedStrings #-}
 
 module Main (main) where
 
-import qualified B.Lib
+import B.Lib qualified
 import Test.Hspec
 
 main :: IO ()

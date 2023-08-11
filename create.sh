@@ -18,7 +18,7 @@ echo "Creating project $PROJECT_NAME at $PROJECT_PATH"
 # Step: create project dir and copy files
 mkdir -p "$PROJECT_PATH"
 cp -r ./*  "$PROJECT_PATH"
-cp .gitignore .hlint.yaml  "$PROJECT_PATH"
+cp .vimrc .ghci .gitignore .hlint.yaml  "$PROJECT_PATH"
 cd "$PROJECT_PATH"
 
 setupFile() {
