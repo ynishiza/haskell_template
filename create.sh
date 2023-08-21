@@ -5,6 +5,7 @@ set -eu -o pipefail
 __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck disable=SC2034
 __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
+filename="$(basename "${__file}")"
 
 [[ $# != 1 ]] && echo "Provide project path" && exit 1
 
@@ -34,10 +35,9 @@ setupFile "$PROJECT_PATH/hie.yaml"
 setupFile "$PROJECT_PATH/package.yaml"
 
 # Cleanup
-rm -f ./*.cabal* "setup.sh" ./*.bak*
+rm -f ./*.cabal* "$filename" ./*.bak*
 
 echo "Done setup"
-
 
 # Step: test
 echo "make compile"
