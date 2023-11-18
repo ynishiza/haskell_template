@@ -68,7 +68,7 @@ dependencies:
 #
 # Dependent types
 # - dec > 0.0.4 && < 1
-# - fin > 0.2 && < 0.3
+# - fin >= 0.3 && < 0.4
 # - free > 5.1 && < 6
 # - singletons > 3 && < 4
 # - singletons-base >= 3 && < 4
@@ -166,5 +166,5 @@ tests:
       # - tasty-hspec >= 1.1 && < 1.3
       - hspec >= 0.1 && <= 3
       # - hedgehog < 1 && 2
-      # - tasty-hedgehog >= 0.1 && <= 1.4
+      # - tasty-hedgehog >= 0.1 && < 1.5
 
