@@ -10,7 +10,7 @@ filename="$(basename "${__file}")"
 [[ $# != 1 ]] && echo "Provide project path" && exit 1
 
 PROJECT_PATH="$1"
-PROJECT_NAME=$(basename "$PROJECT_PATH")
+PROJECT_NAME=$(basename "$PROJECT_PATH" | awk '{print tolower($0)}')
 
 [[ -d "$PROJECT_PATH" ]] && echo "$PROJECT_PATH already exists" && exit 1
 
@@ -18,8 +18,10 @@ echo "Creating project $PROJECT_NAME at $PROJECT_PATH"
 
 # Step: create project dir and copy files
 mkdir -p "$PROJECT_PATH"
-cp -r ./*  "$PROJECT_PATH"
+cp -R ./*  "$PROJECT_PATH"
 cp .vimrc .ghci .gitignore .hlint.yaml  "$PROJECT_PATH"
+# Project path must be absolute
+PROJECT_PATH=$(realpath "$PROJECT_PATH")
 cd "$PROJECT_PATH"
 
 setupFile() {

@@ -25,11 +25,13 @@ compile: ## Compile
 
 .PHONY: compile-profile
 compile-profile: ## Compile with profiler
-	stack build --profile 
+	stack build --profile \
+		--ghc-options "-fprof-auto -fprof-auto-top -fprof-auto-call -fprof-auto-exported -fprof-auto-calls"
 
 .PHONY: document
 document: ## Build haddock documentation 
-	stack haddock --no-haddock-deps --haddock-arguments "-o $(DOCUMENTATION_DIR)" 
+	stack haddock --no-haddock-deps \
+		--haddock-arguments "-o $(DOCUMENTATION_DIR)"
 
 .PHONY: lint
 lint: ## Lint

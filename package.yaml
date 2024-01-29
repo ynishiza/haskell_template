@@ -90,22 +90,15 @@ dependencies:
 
 ghc-options:
 - -rtsopts=all
-- -fprof-auto
-- -fprof-auto-top
-- -fprof-auto-calls
-- -fprof-auto-exported
-- -fprof-auto-calls
-- -Wall
-- -Wcompat
-- -Widentities
-- -Wincomplete-record-updates
-- -Wincomplete-uni-patterns
-- -Wmissing-export-lists
-- -Wmissing-home-modules
-- -Wpartial-fields
-- -Wredundant-constraints
 - -threaded 
-- -Werror           # Warning as error
+- -Werror                          # Warning as error
+- -Wall                            # All recommended warnings
+- -Wcompat                         # Additional warnings to become default in future
+- -Wincomplete-uni-patterns        # Incomplete pattern match in lambda
+- -Wmissing-export-lists           # Module should have export list
+- -Wpartial-fields                 # Sum of records must have same field e.g. `data A = A { x :: Int } | B`  B does not have field x
+- -Wincomplete-record-updates      # Updating partial field records 
+- -Wredundant-constraints          # Unused constraints in a signature
 
 
 # NOTE: "language" field not recognized?
